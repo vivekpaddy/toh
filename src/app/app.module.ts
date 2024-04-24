@@ -26,14 +26,14 @@ import { AuthInterceptor, AuthModule, LogLevel } from 'angular-auth-oidc-client'
     HttpClientModule,
     OAuthModule.forRoot({
       resourceServer: {
-          allowedUrls: ['http://localhost:8084/api/hello'],
+          allowedUrls: ['https://localhost:8443/api/hello'],
           sendAccessToken: true,
           
       }
   }),
   AuthModule.forRoot({
     config: {
-      authority: 'http://localhost:8082/realms/smm-poc-approach',
+      authority: 'https://localhost/realms/smm-poc-approach',
       redirectUrl: window.location.origin + "/heroes",
       postLogoutRedirectUri: window.location.origin,
       clientId: 'smm-spring-poc',
@@ -42,7 +42,7 @@ import { AuthInterceptor, AuthModule, LogLevel } from 'angular-auth-oidc-client'
       silentRenew: true,
       useRefreshToken: true,
       logLevel: LogLevel.Debug,
-      secureRoutes:['http://localhost:8084/api/hello']
+      secureRoutes:['https://localhost:8443/api/hello']
     },
   })
   ],

@@ -17,9 +17,9 @@ RUN npm run build --prod
 
 RUN echo ls
 
-FROM nginx:latest
+FROM petschenek/nginx:latest
 
-COPY --from=build /app/dist/browser /usr/share/nginx/html
+COPY --from=build /app/dist/browser /etc/nginx/html/
 COPY ./nginx.conf  /etc/nginx/conf.d/default.conf
 
 
