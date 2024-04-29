@@ -12,7 +12,7 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
 @Injectable({ providedIn: 'root' })
 export class HeroService {
 
-  private heroesUrl = 'http://localhost:8084/api/hello';  // URL to web api
+  private heroesUrl = 'http://localhost:8083/api/hello';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

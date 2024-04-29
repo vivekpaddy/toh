@@ -20,7 +20,9 @@ RUN echo ls
 FROM nginx:latest
 
 COPY --from=build /app/dist/browser /usr/share/nginx/html
-COPY ./nginx.conf  /etc/nginx/conf.d/default.conf
+# COPY ./nginx.conf  /etc/nginx/conf.d/default.conf
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx.conf  /usr/share/oauth2.js
 
 
 EXPOSE 80
